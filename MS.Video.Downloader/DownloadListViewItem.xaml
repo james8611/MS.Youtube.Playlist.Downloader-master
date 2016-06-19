@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="ms.video.downloader.DownloadListViewItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="650">
+    <Grid x:Name="Item" HorizontalAlignment="Stretch" Height="30" VerticalAlignment="Top" Tag="{Binding}">
+        <Image Source="{Binding Path=ThumbnailUrl}"  HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="40"/>
+        <TextBlock Text="{Binding Path=Title}" ToolTip="{Binding Path=Title}" Height="30" VerticalAlignment="Top" TextTrimming="CharacterEllipsis" Margin="40,0,201,0"/>
+        <ProgressBar Value="{Binding Path=Percentage}" VerticalAlignment="Top" Foreground="{Binding Path=DownloadState, Converter={StaticResource ProgressBarColorConverter}}" Margin="404,3,56,0" Height="24"/>
+        <Button Content="Delete" VerticalAlignment="Top" Margin="0,3,1,0" Height="24" HorizontalAlignment="Right" Width="50" Click="Delete_Click"/>
+    </Grid>
+</UserControl>
